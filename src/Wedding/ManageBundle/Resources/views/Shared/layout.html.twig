@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="//use.fonticons.com/2d2cc9ab.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+
+
+        <title>{% block title %}Matt &amp; Caitlyn Wedding{% endblock %}</title>
+        <!-- Bootstrap -->
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
+            {% stylesheets
+                    '@WeddingManageBundle/Resources/public/css/bootstrap.css'
+                    '@WeddingManageBundle/Resources/public/css/custom.scss'
+                %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+
+    {#<body background="{{ asset('bundles/weddingmanage/images/_MG_01661.jpg') }}">#}
+    <body>
+        <div id="wrapper">
+
+    <div id="bg">
+        <img src="{{ asset('bundles/weddingmanage/images/_MG_01661.jpg') }}">
+    </div>
+            {% include 'WeddingManageBundle:Shared:nav.html.twig' %}
+
+            <div id="page-wrapper">
+
+                {% block allContent %}
+                    <div class="container" style="background-color: #fff;">
+                        {% set flashTypes = [ 'info', 'notice', 'warning', 'error', 'success'] %}
+                            {% set flashTypeMap = {
+                                'info' : 'info',
+                                'notice' : 'info',
+                                'warning' : 'warning',
+                                'error' : 'danger',
+                                'success' : 'success',
+                            } %}
+                            {% for flashType in flashTypes %}
+                                {% for flashMessage in app.session.flashbag.get(flashType) %}
+                                    <div class="hidden-print alert alert-{{ flashTypeMap[flashType] }}">
+                                        <strong>
+                                            {{ flashMessage|raw }}
+                                        </strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+
+        {% block javascripts %}
+            <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+            <script src="{{ asset('js/jquery.js') }}"></script>
+            <!-- Include all JavaScripts, compiled by Assetic -->
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+            {% javascripts
+                '@WeddingManageBundle/Resources/public/js/custom.js'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+        {% endblock %}
+    </body>
+</html>
+

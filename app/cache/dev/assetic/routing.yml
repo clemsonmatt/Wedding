@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: '/Users/matte/Dropbox (NCEES)/Projects/myProjects/wedding.dev/app/config/routing_dev.yml'

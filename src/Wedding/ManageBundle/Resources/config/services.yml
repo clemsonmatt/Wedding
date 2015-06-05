@@ -1,0 +1,5 @@
+services:
+    wedding.form.type.rsvp:
+        class: Wedding\ManageBundle\Form\Type\RsvpType
+        tags:
+            - { name: form.type, alias: rsvp }

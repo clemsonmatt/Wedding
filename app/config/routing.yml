@@ -1,0 +1,8 @@
+wedding_manage:
+    resource: "@WeddingManageBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+logout:
+    path:   /logout
+

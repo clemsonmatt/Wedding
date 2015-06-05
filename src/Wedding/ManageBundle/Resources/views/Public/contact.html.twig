@@ -1,0 +1,52 @@
+{% extends 'WeddingManageBundle:Shared:layout.html.twig' %}
+
+{% block content %}
+    <br><br>
+    <legend>
+        <h3 class="wedding">Contact Us</h3>
+    </legend>
+    <div class="row">
+        <div class="col-xs-5 col-xs-offset-1">
+            <div class="row">
+                <center>
+                    <h2 class="wedding">Matt</h2>
+                </center>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <img src="{{ asset('bundles/weddingmanage/images/CaylxFarm/matt.jpg') }}" class="pull-right" style="max-width: 60%; border-radius: 50%;">
+                </div>
+                <div class="col-xs-6">
+                    <br>
+                    <address>
+                        <strong class="wedding">Matthew Ellis</strong><br>
+                        <a href="mailto:#">mellis0292@gmail.com</a><br>
+                        <abbr title="Matt's Phone">P:</abbr> (864) 247-9619
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="row">
+                <center>
+                    <h2 class="wedding">Caitlyn</h2>
+                </center>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <img src="{{ asset('bundles/weddingmanage/images/Engagement/cait.jpg') }}" class="pull-right" style="max-width: 60%; border-radius: 50%;">
+                </div>
+                <div class="col-xs-6">
+                    <br>
+                    <address>
+                        <strong class="wedding">Caitlyn Dickerson</strong><br>
+                        <a href="mailto:#">caitdson7851@gmail.com</a><br>
+                        <abbr title="Caitlyn's Phone">P:</abbr> (864) 723-0881
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    {% include 'WeddingManageBundle:Shared:footer.html.twig' %}
+{% endblock %}

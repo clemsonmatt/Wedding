@@ -1,0 +1,20 @@
+{% extends 'WeddingManageBundle:Shared:layout.html.twig' %}
+
+{% block content %}
+    <br><br>
+    <div class="col-sm-12">
+        <legend>
+            <h3 class="wedding">
+                Edit Response
+            </h3>
+        </legend>
+        {{ form_start(form) }}
+            {{ form_rest(form) }}
+            <button class="btn btn-success">
+                Save RSVP
+            </button>
+        {{ form_end(form) }}
+        <br>
+    </div>
+    <br><br>
+{% endblock %}
